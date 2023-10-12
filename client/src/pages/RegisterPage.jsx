@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function RegisterPage() {
   const [name, setName] = useState("");
+  const [LinkedIn, setLinkedIn] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
@@ -16,6 +17,7 @@ export default function RegisterPage() {
       await axios.post("/register", {
         name,
         email,
+        LinkedIn,
         password,
       });
       alert("Registration Successful ! Please Login ");
@@ -39,6 +41,13 @@ export default function RegisterPage() {
             placeholder="your@email.com"
             value={email}
             onChange={(ev) => setEmail(ev.target.value)}
+          />
+
+          <input
+            type="username"
+            placeholder="LinkedIn Username"
+            value={LinkedIn}
+            onChange={(ev) => setLinkedIn(ev.target.value)}
           />
           <input
             type="password"

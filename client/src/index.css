@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-input[type="text"],input[type="password"],input[type="email"],input[type="name"],input[type="phone"],
-input[type="number"],input[type="tel"],textarea{
-    @apply w-full border my-2 py-2 px-3 rounded-lg;
+input[type="text"],input[type="email"],input[type="name"],input[type="phone"],
+input[type="number"],input[type="tel"],textarea, input[type="username"], input[type="password"]{
+    @apply w-full border border-gray-600 my-2 py-2 px-3 rounded-lg;
 }
 
 textarea{

@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import { Link, Navigate } from "react-router-dom";
+import { UserContext } from "../components/UserContext";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -8,6 +9,7 @@ export default function LoginPage() {
 
   //state for redirect
   const [redirect, setRedirect] = useState(false);
+  const { setUser } = useContext(UserContext);
 
   async function handleLoginSubmit(ev) {
     ev.preventDefault();
@@ -17,7 +19,7 @@ export default function LoginPage() {
         { email, password },
         { withCredentials: true }
       );
-      //   setUser(data);
+      setUser(data);
       //we can use response & response.data as well
       alert("Login Successful !");
       setRedirect(true);
