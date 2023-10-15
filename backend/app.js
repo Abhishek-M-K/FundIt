@@ -141,20 +141,4 @@ app.listen(4000);
 
 /*uploading photos
 const photosMiddleware = multer({ dest: "uploads/" });
-app.post("/upload", photosMiddleware.array("photos", 100), (req, res) => {
-  const uploadedFiles = [];
-  // to keep the track of photos uploaded for a dest
-  //to make webp extension to jpg / jpeg
-  for (let i = 0; i < req.files.length; i++) {
-    const { path, originalname } = req.files[i];
-    const parts = originalname.split("."); // the orginal name will be separated by . and thus we can change extension
-    const ext = parts[parts.length - 1];
-    const newPath = path + "." + ext;
-    fs.renameSync(path, newPath);
-    uploadedFiles.push(newPath.replace("uploads/", ""));
-  }
-
-  //res.json(req.files); //this before changing the ext
-  res.json(uploadedFiles);
-});
 */
