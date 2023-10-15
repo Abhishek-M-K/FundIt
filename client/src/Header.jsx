@@ -62,7 +62,7 @@ export default function Header() {
         </div>
 
         <div>
-          <Link to={"/"}>Companies</Link>
+          <Link to={"/companies"}>Companies</Link>
         </div>
 
         <div>

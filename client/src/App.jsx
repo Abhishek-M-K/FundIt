@@ -10,6 +10,7 @@ import StartupPage from "./pages/StartupPage";
 import AddProject from "./pages/AddProject";
 import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
+import CompanyPage from "./pages/CompanyPage";
 
 axios.defaults.baseURL = "http://localhost:4000";
 axios.defaults.withCredentials = true;
@@ -23,6 +24,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/companies" element={<CompanyPage />} />
           <Route path="/startup" element={<StartupPage />} />
           <Route path="/startup/myideas" element={<ProjectsPage />} />
           <Route path="/startup/myideas/new" element={<AddProject />} />
