@@ -66,7 +66,7 @@ export default function Header() {
         </div>
 
         <div>
-          <Link to={"/"}>Contact</Link>
+          <Link to={"/contact"}>Contact</Link>
         </div>
       </div>
 

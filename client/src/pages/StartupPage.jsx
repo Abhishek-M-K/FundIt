@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import StartupNav from "../components/StartupNav";
 import axios from "axios";
-import { UserContext } from "../components/UserContext";
+import { UserContext } from "../UserContext";
 import { Navigate, useParams } from "react-router-dom";
 import ProjectsPage from "./ProjectsPage";
 

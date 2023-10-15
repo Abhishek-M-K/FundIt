@@ -1,4 +1,5 @@
 # Logs
+
 logs
 *.log
 npm-debug.log*
@@ -8,6 +9,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+/backend/.env
+
 dist
 dist-ssr
 *.local

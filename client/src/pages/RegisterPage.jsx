@@ -7,7 +7,7 @@ export default function RegisterPage() {
   const [LinkedIn, setLinkedIn] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [phone, setPhone] = useState("");
+  //const [phone, setPhone] = useState("");
 
   async function registerUser(ev) {
     ev.preventDefault();

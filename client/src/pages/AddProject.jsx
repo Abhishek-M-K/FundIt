@@ -16,7 +16,7 @@ export default function AddProject() {
   useEffect(() => {
     if (!id) return;
 
-    axios.get("/myideas/" + id).then((response) => {
+    axios.get("/projects/" + id).then((response) => {
       const { data } = response;
       setTitle(data.title);
       setAddedPhotos(data.photos);
@@ -76,7 +76,7 @@ export default function AddProject() {
     };
 
     try {
-      await axios.post("/myideas", projectData);
+      await axios.post("/projects", projectData);
       setRedirect(true);
     } catch (error) {
       console.log(error);
