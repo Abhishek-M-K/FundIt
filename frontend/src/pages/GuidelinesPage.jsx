@@ -1,17 +1,10 @@
-import Typed from "react-typed";
-
 export default function GuidelinesPage() {
   return (
     <div>
       <div>
-        <h1 className="mt-10 font-mono text-green-800 font-bold text-xl"></h1>
-        <Typed
-          className="font-mono text-green-800 font-bold text-xl"
-          strings={[" Guidelines For Users."]}
-          typeSpeed={120}
-          backSpeed={140}
-          loop
-        />
+        <h1 className="mt-10 font-mono text-green-800 font-bold text-xl">
+          Guidelines for users
+        </h1>
       </div>
 
       <div className="flex mt-5 mb-2">
