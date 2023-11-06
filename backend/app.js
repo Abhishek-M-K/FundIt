@@ -13,7 +13,7 @@ const app = express();
 require("dotenv").config();
 
 const corsConfig = {
-  origin: "https://fund-it-rust.vercel.app/",
+  origin: "https://fund-it-rust.vercel.app",
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
 };
