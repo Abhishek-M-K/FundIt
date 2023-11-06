@@ -12,6 +12,14 @@ const fs = require("fs");
 const app = express();
 require("dotenv").config();
 
+const corsConfig = {
+  origin: "https://fund-it-rust.vercel.app/",
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+};
+app.use(cors(corsConfig));
+app.options("", cors(corsConfig));
+
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
@@ -19,12 +27,12 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 const bcryptSalt = bcrypt.genSaltSync(10);
 const jwtsecret = "sameepisgay";
 
-app.use(
-  cors({
-    credentials: true,
-    origin: "http://localhost:5173",
-  })
-);
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: "http://localhost:5173",
+//   })
+// );
 
 mongoose.connect(process.env.MONGO_URL);
 
@@ -108,55 +116,11 @@ app.post("/upload-by-link", async (req, res) => {
 
 const photosMiddleware = multer({ dest: "uploads/" });
 app.post("/upload", photosMiddleware.array("photos", 100), (req, res) => {
-  //const uploadedFiles = [];
-  // to keep the track of photos uploaded for a dest
-  //to make webp extension to jpg / jpeg
-  // for (let i = 0; i < req.files.length; i++) {
-  //   const { path, originalname } = req.files[i];
-  //   const parts = originalname.split("."); // the orginal name will be separated by . and thus we can change extension
-  //   const ext = parts[parts.length - 1];
-  //   const newPath = path + "." + ext;
-  //   fs.renameSync(path, newPath);
-  //   uploadedFiles.push(newPath.replace("uploads/", ""));
-  // }
   const uploadedPhotos = req.files.map((file) => {
     return `/uploads/${file.filename}`;
   });
-
-  //res.json(req.files); //this before changing the ext
   res.json(uploadedPhotos);
 });
-
-//adding ideas/projects
-// app.post("/projects", (req, res) => {
-//   const { token } = req.cookies;
-//   const { title, addedPhotos, description, amount, equity, note } = req.body;
-//   console.log("Received project data:", req.body);
-//   if (token) {
-//     jwt.verify(token, jwtsecret, {}, async (err, userData) => {
-//       if (err) {
-//         console.error("JWT Error:", err);
-//         throw err;
-//       }
-
-//       console.log("Creating project for user:", userData.id);
-
-//       const projectDoc = await Project.create({
-//         owner: userData.id,
-//         title,
-//         photos: addedPhotos,
-//         description,
-//         amount,
-//         equity,
-//         note,
-//       });
-//       console.log("Project created:", projectDoc);
-//       res.json(projectDoc);
-//     });
-//   } else {
-//     console.log("there is no token");
-//   }
-// });
 
 app.post("/projects", (req, res) => {
   const { token } = req.cookies;
@@ -175,7 +139,6 @@ app.post("/projects", (req, res) => {
       equity,
       note,
     });
-    console.log("Project created as :", projectDoc);
     res.json(projectDoc);
   });
 });
@@ -198,7 +161,3 @@ app.get("/projects", async (req, res) => {
 });
 
 app.listen(4000);
-
-/*uploading photos
-
-*/
