@@ -45,7 +45,10 @@ export const StateContextProvider = ({ children }) => {
     const campaigns = await contract.call("getCampaigns");
 
     // console.log(campaigns);
-    const parsedCampaigns = campaigns.map((campaign, i) => ({
+    const filteredCampaigns = campaigns.filter(
+      (campaign) => campaign.deadline.toNumber() > 0
+    );
+    const parsedCampaigns = filteredCampaigns.map((campaign, i) => ({
       owner: campaign.owner,
       title: campaign.title,
       description: campaign.description,
