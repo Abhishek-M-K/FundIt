@@ -7,7 +7,12 @@ const projectSchema = new mongoose.Schema({
     required: true,
     lowercase: true,
   },
-  logo: [String],
+  email: {
+    type: String,
+    required: true,
+    lowercase: true,
+  },
+  photos: [String],
   description: {
     type: String,
     required: true,
