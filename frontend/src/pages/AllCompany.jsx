@@ -41,24 +41,3 @@ export default function AllCompany() {
     </div>
   );
 }
-
-{
-  /* {projects.length > 0 &&
-        projects.map((project) => (
-          <Link to={"/projects/" + project._id}>
-            <div className="flex bg-gray-500 rounded-2xl mb-2">
-              {project.photos?.[0] && (
-                <img
-                  className="rounded-2xl object-cover aspect-square"
-                  src={"http://localhost:4000/uploads/" + project.photos?.[0]}
-                  alt=""
-                />
-              )}
-            </div>
-            <h2 className="font-semibold leading-4">{project.titke}</h2>
-            <h3 className="text-sm truncate leading-4 mt-1">
-              {project.description}
-            </h3>
-          </Link>
-        ))} */
-}

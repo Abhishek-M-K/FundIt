@@ -11,8 +11,6 @@ export default function RegisterPage() {
 
   async function registerUser(ev) {
     ev.preventDefault();
-    // axios.get('http://localhost:4000/test'); no need to hardcode the url , store it as baseUrl --->
-    // axios.get('/test') testing purposes
     try {
       await axios.post("/register", {
         name,

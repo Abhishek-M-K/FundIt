@@ -6,7 +6,9 @@ export default function StartupCard({ project, index = 0 }) {
   return (
     <img
       className="object-cover rounded-2xl"
-      src={"http://localhost:4000/uploads/" + project.photos[index]}
+      src={
+        "https://backendfundit.onrender.com/uploads/" + project.photos[index]
+      }
       alt=""
     />
   );

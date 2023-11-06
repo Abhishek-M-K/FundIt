@@ -17,7 +17,7 @@ import MyCampaign from "./pages/MyCampaign";
 import ProjectDetails from "./pages/ProjectDetails";
 import AllCompany from "./pages/AllCompany";
 import GuidelinesPage from "./pages/GuidelinesPage";
-axios.defaults.baseURL = "http://localhost:4000";
+axios.defaults.baseURL = "https://backendfundit.onrender.com";
 axios.defaults.withCredentials = true;
 
 function App() {
