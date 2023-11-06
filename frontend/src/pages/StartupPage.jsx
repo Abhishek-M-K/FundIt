@@ -51,11 +51,13 @@ export default function StartupPage() {
     <div>
       <StartupNav />
 
-      <DisplayCampaign
-        title="My Campaigns"
-        isLoading={isLoading}
-        campaigns={campaigns}
-      />
+      <div className="mt-4">
+        <DisplayCampaign
+          title="My Campaigns"
+          isLoading={isLoading}
+          campaigns={campaigns}
+        />
+      </div>
 
       {subpage === "profile" && (
         <div className="text-center max-w-lg mx-auto mt-5">
