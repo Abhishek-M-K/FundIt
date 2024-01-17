@@ -11,20 +11,35 @@ export default function Header() {
 
   return (
     <header className="flex justify-between w-full border-b-[1px]">
-      <Link to={"/"} className="flex items-center gap-1">
+      <Link to={"/"} className="flex items-center gap-2">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          id="logo-39"
+          width="100%"
+          height="100%"
+          viewBox="0 0 50 40"
+          className="w-8 h-8"
           fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-6 h-6"
+          xmlns="http://www.w3.org/2000/svg"
         >
+          {" "}
           <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"
-          />
+            d="M25.0001 0L50 15.0098V24.9863L25.0001 40L0 24.9863V15.0099L25.0001 0Z"
+            fill="#A5B4FC"
+            class="ccompli2"
+          ></path>{" "}
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M0 15.0098L25 0L50 15.0098V24.9863L25 40L0 24.9863V15.0098ZM25 33.631L44.6967 21.8022V18.1951L44.6957 18.1945L25 30.0197L5.30426 18.1945L5.3033 18.1951V21.8022L25 33.631ZM25 24.5046L40.1018 15.4376L36.4229 13.2298L25 20.0881L13.5771 13.2298L9.89822 15.4376L25 24.5046ZM25 14.573L31.829 10.4729L25 6.37467L18.171 10.4729L25 14.573Z"
+            fill="#4F46E5"
+            class="ccustom"
+          ></path>{" "}
+          <path
+            d="M25.0001 0L0 15.0099V24.9863L25 40L25.0001 0Z"
+            fill="#A5B4FC"
+            class="ccompli2"
+            fill-opacity="0.3"
+          ></path>{" "}
         </svg>
 
         <span className="font-semibold text-xl">FundIt</span>
