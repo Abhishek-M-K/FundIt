@@ -10,7 +10,7 @@ export default function Header() {
   const navigate = useNavigate();
 
   return (
-    <header className="flex justify-between ">
+    <header className="flex justify-between w-full border-b-[1px]">
       <Link to={"/"} className="flex items-center gap-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -31,14 +31,14 @@ export default function Header() {
       </Link>
 
       <div className="flex gap-6 py-3 px-4 ">
-        <div className="font-medium">
+        <div className="font-medium text-lg">
           <Link to={"/campaigns"}>Campaigns</Link>
         </div>
 
-        <div className="font-medium">
+        <div className="font-medium text-lg">
           <Link to={"/guidelines"}>Guildlines</Link>
         </div>
-        <div className="font-medium">
+        <div className="font-medium text-lg">
           <Link to={"/companies"}>Ideas</Link>
         </div>
       </div>
